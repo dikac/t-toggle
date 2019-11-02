@@ -1,2 +1,2 @@
 # t-toggle
-Typescript toggle
+typescript toggle
