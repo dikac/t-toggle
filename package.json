@@ -1,10 +1,10 @@
 {
-  "name": "t-toggle",
-  "version": "0.0.1",
+  "name": "@dikac/t-toggle",
+  "version": "0.1.0",
   "description": "Typescript toggle",
   "dependencies": {
     "@types/node": "^12.12.3",
-    "dist-mover": "git+https://github.com/dikac/dist-mover.git",
+    "@dikac/deployer": "^0.1.1",
     "npm-run-all": "^4.1.5",
     "typescript": "^3.6.4"
   },
@@ -21,12 +21,10 @@
     "spec-compile-watch-script": "tsc -w -p tsconfig-spec.json",
     "compile": "tsc",
     "compile-watch": "tsc -w",
-    "postinstall": "npm run production",
-    "production": "dist-mover"
+    "postinstall": "npm-run-all deploy",
+    "deploy": "deployer /.git /dist /"
   },
   "files": [
-    "tsconfig.json",
-    "src/",
     "dist/",
     "LICENSE",
     "Readme.md"
